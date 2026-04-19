@@ -353,7 +353,7 @@ export function ChatView({ onBack, onOpenGames, onOpenProfile, onOpenScanner }: 
                 <MoreVertical className="h-5 w-5" />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align={isRTL ? 'start' : 'end'} className="w-52" dir={isRTL ? 'rtl' : 'ltr'}>
+            <DropdownMenuContent align={isRTL ? 'start' : 'end'} className="w-52">
               {/* Pin/Unpin */}
               <DropdownMenuItem 
                 onClick={() => chat.isPinned ? unpinChat(chat.id) : pinChat(chat.id)}
