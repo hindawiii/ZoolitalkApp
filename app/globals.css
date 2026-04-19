@@ -165,12 +165,14 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    border-color: var(--border);
+    outline-color: color-mix(in oklch, var(--ring) 50%, transparent);
     box-sizing: border-box;
   }
   html,
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--background);
+    color: var(--foreground);
     overflow-x: hidden !important;
     max-width: 100vw !important;
     width: 100%;
@@ -193,7 +195,13 @@
   }
   
   .bottom-nav {
-    @apply fixed bottom-0 left-0 right-0 z-40 bg-card border-t border-border;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 40;
+    background-color: var(--card);
+    border-top: 1px solid var(--border);
     padding-bottom: env(safe-area-inset-bottom, 0);
     max-width: 100vw;
   }
@@ -210,15 +218,21 @@
   
   /* Chat bubble styles */
   .chat-bubble {
-    @apply rounded-2xl px-4 py-2 max-w-[min(80%,22rem)];
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    max-width: min(80%, 22rem);
   }
   
   .chat-bubble-sent {
-    @apply bg-primary text-primary-foreground rounded-br-sm;
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    border-bottom-right-radius: 0.125rem;
   }
   
   .chat-bubble-received {
-    @apply bg-secondary text-secondary-foreground rounded-bl-sm;
+    background-color: var(--secondary);
+    color: var(--secondary-foreground);
+    border-bottom-left-radius: 0.125rem;
   }
   
   /* Jabana loading spinner */
@@ -283,12 +297,19 @@
   
   /* Gift overlay */
   .gift-overlay {
-    @apply fixed inset-0 z-[100] pointer-events-none flex items-center justify-center;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   /* Infinite scroll container */
   .infinite-scroll {
-    @apply overflow-y-auto overscroll-contain;
+    overflow-y: auto;
+    overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
   }
 }
