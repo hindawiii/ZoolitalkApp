@@ -115,7 +115,7 @@ export function CreateListingSheet({ open, onOpenChange }: CreateListingSheetPro
       sellerId: currentUser.id,
       sellerName: currentUser.name,
       sellerAvatar: currentUser.avatar || '',
-      sellerIsVerified: currentUser.isVerified || false,
+      isVerified: currentUser.isVerified || false,
       // أضف التاريخ لضمان ترتيب المنشورات
       createdAt: new Date().toISOString(),
     });
