@@ -116,7 +116,6 @@ export function CreateListingSheet({ open, onOpenChange }: CreateListingSheetPro
       sellerName: currentUser.name,
       sellerAvatar: currentUser.avatar || '',
       // أضف التاريخ لضمان ترتيب المنشورات
-      createdAt: new Date().toISOString(),
     });
     
     setIsSubmitting(false)
