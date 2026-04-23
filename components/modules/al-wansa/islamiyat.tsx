@@ -76,21 +76,22 @@ export function Islamiyat() {
 
   const handleShareCard = (title: string, body: string) => {
     const authorName = currentUser?.name || (isRTL ? 'زول راكوبتنا' : 'Rakobatna User')
-    const authorNameAr = currentUser?.nameAr || 'راكوبتنا'
+   const authorNameAr = currentUser?.nameAr || 'راكوبتنا'
 
-    addPost({
-      authorId: currentUser?.id || 'anonymous',
-      authorName,
-      authorNameAr,
-      authorAvatar: currentUser?.avatar || '/avatars/default.jpg',
-      content: title,
-      contentAr: body,
-      images: [],
-      reactions: { like: 0, love: 0, kaffu: 0, abshir: 0, haha: 0, sad: 0 },
-      commentsCount: 0,
-      sharesCount: 0,
-      timestamp: new Date(),
-    })
+     addPost({
+       id: Date.now().toString(),
+       authorId: currentUser?.id || 'anonymous',
+       authorName,
+       authorNameAr,
+       authorAvatar: currentUser?.avatar || '',
+       content: newPostContent,
+       contentAr: newPostContent, // أو ترجمتها إذا كان هناك حقل مخصص
+       images: [],
+       reactions: { like: 0, love: 0, kaffu: 0, abshir: 0, haha: 0, sad: 0 },
+       commentsCount: 0,
+       sharesCount: 0,
+       timestamp: new Date(),
+     });
   }
 
   return (
