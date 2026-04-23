@@ -128,13 +128,19 @@ export function Islamiyat() {
             </Button>
           </div>
 
+          <div className="relative group">
+            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground group-focus-within:text-emerald-500 transition-colors" />
           <Input
             value={search}
             onChange={(event) => setSearch(event.target.value)}
             placeholder={isRTL ? 'ابحث عن سورة أو آية' : 'Search a surah or verse'}
-            className={cn(isRTL && 'font-arabic')}
-            leadingAccessory={<Search className="h-4 w-4 text-muted-foreground" />}
-          />
+            className={cn(
+                "pl-10", // مسافة للأيقونة من اليسار
+                isRTL && 'font-arabic text-right pr-4' // تنسيق إضافي للغة العربية
+              )}
+              // تم حذف سطر leadingAccessory من هنا نهائياً
+            />
+          </div>
 
           <div className="space-y-3">
             {surahList.map((surah) => {
