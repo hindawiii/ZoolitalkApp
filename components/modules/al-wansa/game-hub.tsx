@@ -315,7 +315,7 @@ function SigaGame() {
     setBoard(nextBoard)
     setCaptures((prev) => ({
       ...prev,
-      const [captures, setCaptures] = useState<Record<number, number>>({ 1: 0, 2: 0 });
+      [currentPlayer]: prev[currentPlayer as keyof typeof prev] + capturedCount,
     }))
     setCurrentPlayer(nextPlayer)
     setStatus(capturedCount > 0
