@@ -84,8 +84,8 @@ export function Islamiyat() {
        authorName,
        authorNameAr,
        authorAvatar: currentUser?.avatar || '',
-       content: newPostContent,
-       contentAr: newPostContent, // أو ترجمتها إذا كان هناك حقل مخصص
+       content: inputValue,
+       contentAr: inputValue, // أو ترجمتها إذا كان هناك حقل مخصص
        images: [],
        reactions: { like: 0, love: 0, kaffu: 0, abshir: 0, haha: 0, sad: 0 },
        commentsCount: 0,
