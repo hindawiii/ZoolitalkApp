@@ -579,7 +579,7 @@ export function ChatView({ onBack, onOpenGames, onOpenProfile, onOpenScanner }: 
                     <MapPin className="h-4 w-4" />
                     <span className={cn(isRTL && 'font-arabic')}>{isRTL ? 'موقع' : 'Location'}</span>
                   </DropdownMenuSubTrigger>
-                  <DropdownMenuSubContent dir={isRTL ? 'rtl' : 'ltr'}>
+                  <DropdownMenuSubContent>
                     <DropdownMenuItem onClick={() => handleShareLocation(false)} className={cn('gap-2', isRTL && 'flex-row-reverse')}>
                       <MapPin className="h-4 w-4" />
                       <span className={cn(isRTL && 'font-arabic')}>{isRTL ? 'الموقع الحالي' : 'Current Location'}</span>
