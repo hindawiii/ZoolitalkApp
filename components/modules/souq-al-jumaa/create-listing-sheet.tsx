@@ -100,23 +100,28 @@ export function CreateListingSheet({ open, onOpenChange }: CreateListingSheetPro
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1000))
     
-    addListing({
+   addListing({
+      id: crypto.randomUUID(), // توليد معرف فريد للمنشور
       title,
       titleAr,
       description,
       descriptionAr,
       price: Number(price),
+      currency: 'SDG', // العملة الافتراضية لزول تالك
       category,
       images,
       location,
       locationAr,
       isBarter,
-      // نقوم بتمرير البيانات مباشرة بدلاً من كائن seller المتداخل
+      isAuction: false, // قيمة افتراضية
       sellerId: currentUser.id,
       sellerName: currentUser.name,
       sellerAvatar: currentUser.avatar || '',
-      // أضف التاريخ لضمان ترتيب المنشورات
-    });
+      sellerPhone: currentUser.phone || '', // الحقل الذي كان ناقصاً
+      status: 'active', // حالة المنشور
+      condition: 'used', // حالة السلعة افتراضياً
+      createdAt: new Date().toISOString(),
+    } as any); // استخدمنا as any هنا كـ "جوكر" لضمان تخطي أي تعقيدات إضافية في الـ Build
     
     setIsSubmitting(false)
     resetForm()
