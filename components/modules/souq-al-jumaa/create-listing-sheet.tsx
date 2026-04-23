@@ -111,13 +111,14 @@ export function CreateListingSheet({ open, onOpenChange }: CreateListingSheetPro
       location,
       locationAr,
       isBarter,
-      seller: {
-        id: currentUser.id,
-        name: currentUser.name,
-        avatar: currentUser.avatar,
-        isVerified: currentUser.isVerified,
-      },
-    })
+      // نقوم بتمرير البيانات مباشرة بدلاً من كائن seller المتداخل
+      sellerId: currentUser.id,
+      sellerName: currentUser.name,
+      sellerAvatar: currentUser.avatar || '',
+      sellerIsVerified: currentUser.isVerified || false,
+      // أضف التاريخ لضمان ترتيب المنشورات
+      createdAt: new Date().toISOString(),
+    });
     
     setIsSubmitting(false)
     resetForm()
