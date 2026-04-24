@@ -98,7 +98,6 @@ export default function SouqAlJumaa() {
           >
             <ListingDetail
               listing={selectedListing}
-              onBack={() => setSelectedListingId(null)}
             />
           </motion.div>
         )}
