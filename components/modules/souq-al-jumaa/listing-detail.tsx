@@ -197,7 +197,7 @@ export function ListingDetail({ listing, onClose, onStartWansa }: ListingDetailP
             )}
             <div className="flex items-center gap-3 text-sm">
               <Calendar className="h-4 w-4 text-muted-foreground shrink-0" />
-              <span>{formatDate(listing.createdAt)}</span>
+              <span>{formatDate((listing as any).createdAt || new Date().toISOString())}</span>
             </div>
           </div>
 
