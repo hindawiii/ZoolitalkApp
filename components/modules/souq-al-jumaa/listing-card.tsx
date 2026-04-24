@@ -81,7 +81,7 @@ export function ListingCard({ listing, onClick }: ListingCardProps) {
         )}
         
         {/* Badges */}
-        <div className="absolute top-2 flex gap-1 start-2">
+        <div className="absolute top-2 flex flex-row gap-1 start-2 z-10">
           <Badge variant="secondary" className="bg-background/80 backdrop-blur-sm text-xs">
             {isRTL ? categoryLabel.ar : categoryLabel.en}
           </Badge>
@@ -94,7 +94,7 @@ export function ListingCard({ listing, onClick }: ListingCardProps) {
         </div>
 
         {/* Action Buttons */}
-        <div className="absolute top-2 end-2 flex gap-1">
+        <div className="absolute top-2 end-2 flex flex-row gap-2 items-center z-10">
           <Button
             variant="ghost"
             size="icon"
@@ -139,7 +139,7 @@ export function ListingCard({ listing, onClick }: ListingCardProps) {
 
         {/* Title */}
         <h3 className={cn(
-          'font-medium line-clamp-2 text-sm',
+         'font-medium line-clamp-2 text-sm text-right', // أضفنا text-right هنا
           isRTL && 'font-arabic'
         )}>
           {isRTL ? listing.titleAr : listing.title}

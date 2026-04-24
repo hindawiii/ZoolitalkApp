@@ -169,6 +169,7 @@
     outline-color: color-mix(in oklch, var(--ring) 50%, transparent);
     box-sizing: border-box;
   }
+  
   html,
   body {
     background-color: var(--background);
@@ -176,15 +177,28 @@
     overflow-x: hidden !important;
     max-width: 100vw !important;
     width: 100%;
+    /* السطرين القادمين هما الحل للمشكلة في لقطة الشاشة */
+    direction: rtl; 
+    text-align: right;
   }
   
   /* RTL Support */
   [dir="rtl"] {
-    font-family: var(--font-arabic), var(--font-sans);
+    font-family: var(--font-tajawal), var(--font-arabic), var(--font-sans);
+    direction: rtl;
+    text-align: right;
   }
   
   [dir="ltr"] {
     font-family: var(--font-sans);
+    direction: ltr;
+    text-align: left;
+  }
+
+  /* إصلاح مشاكل الـ Flex في الوضع العربي */
+  [dir="rtl"] .flex {
+    /* يضمن أن العناصر تبدأ من اليمين تلقائياً */
+    flex-direction: row; 
   }
 }
 
