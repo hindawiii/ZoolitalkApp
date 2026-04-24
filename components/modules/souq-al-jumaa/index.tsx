@@ -97,8 +97,13 @@ export default function SouqAlJumaa() {
             className="absolute inset-0 z-20 bg-background"
           >
             <ListingDetail
-              listing={selectedListing}
-            />
+  listing={selectedListing}
+  onClose={() => setSelectedListingId(null)}
+  onStartWansa={() => {
+    // وظيفة فارغة حالياً لتجاوز خطأ TypeScript
+    console.log("Start wansa with:", selectedListing.sellerName);
+  }}
+/>
           </motion.div>
         )}
       </AnimatePresence>
